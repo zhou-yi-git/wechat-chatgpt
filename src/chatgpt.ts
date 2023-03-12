@@ -22,7 +22,11 @@ const sendMessage = async (message: string) => {
       }),
     });
     return response.json()
-      .then((data) => data.choices[0].message.content);
+      .then((data) => {
+        console.log("apiKey: ", apiKey)
+        console.log("resp: ", data)
+        return data.choices[0].message.content
+      });
   } catch (e) {
     console.error(e)
     return "Something went wrong"

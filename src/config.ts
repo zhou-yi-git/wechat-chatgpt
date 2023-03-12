@@ -8,5 +8,5 @@ export const config: IConfig = {
   model: process.env.MODEL || "gpt-3.5-turbo",
   chatPrivateTiggerKeyword: process.env.CHAT_PRIVATE_TRIGGER_KEYWORD || "",
   chatTiggerRule: process.env.CHAT_TRIGGER_RULE || "",
-  disableGroupMessage: process.env.DISABLE_GROUP_MESSAGE === "true",
+  disableGroupMessage: process.env.DISABLE_GROUP_MESSAGE === "false",
 };
