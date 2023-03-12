@@ -158,7 +158,9 @@ export class ChatGPTBot {
       if (privateChat) {
         return await this.onPrivateMessage(talker, text);
       } else{
+        console.log("disableGroupMessage:", this.disableGroupMessage)
         if (!this.disableGroupMessage){
+          console.log("group message")
           return await this.onGroupMessage(talker, text, room);
         } else {
           return;
