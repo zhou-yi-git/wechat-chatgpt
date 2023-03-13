@@ -103,13 +103,9 @@ export class ChatGPTBot {
       triggered = regEx? regEx.test(text): true;
     } else {
       triggered = this.chatGroupTiggerRegEx.test(text);
-      console.log("match @$ $", triggered)
-      console.log("chatTiggerRule: ", chatTiggerRule)
       // group message support `chatTiggerRule`
       if (triggered && chatTiggerRule) {
         triggered = chatTiggerRule.test(text.replace(this.chatGroupTiggerRegEx, ""))
-        console.log("triggerd:", triggered)
-        console.log("regex", this.chatGroupTiggerRegEx)
       }
     }
     if (triggered) {
